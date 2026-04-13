@@ -1,0 +1,45 @@
+# --- MONOREPO GITIGNORE ---
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+**/npm-debug.log*
+**/yarn-debug.log*
+**/pnpm-debug.log*
+
+# Python / Backend
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.venv/
+**/venv/
+**/ENV/
+**/env.bak/
+**/venv.bak/
+**/*.sqlite3
+**/*.log
+
+# Project / Data Artifacts (Internal bot data)
+**/data/
+**/faiss_index/
+**/vector_store/
+**/chroma_db/
+**/logs/
+
+# Sensitive Information (NEVER PUSH THESE)
+**/.env
+**/.env.production
+**/.env.development
+
+# Editor & System
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db

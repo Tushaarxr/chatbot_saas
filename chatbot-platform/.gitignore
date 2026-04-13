@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data stores
+data/
+*.sqlite3
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project files
+.vscode/
+.idea/
+*.log

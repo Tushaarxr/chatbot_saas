@@ -1,0 +1,59 @@
+# =============================================================================
+# Chatbot Platform — requirements.txt
+# Standalone project — no Adaptive-Rag dependencies
+# =============================================================================
+# Install order:
+#   1. pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   2. pip install -r requirements.txt
+
+# Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy[asyncio]
+asyncpg
+
+# Cache + rate limiting
+redis
+
+# LLM + LangChain
+langchain
+langchain-openai
+langchain-community
+langchain-huggingface
+langgraph
+
+# Local embeddings (BGE-small-en-v1.5)
+sentence-transformers
+
+# Intent classification (DistilBERT)
+transformers
+accelerate>=1.1.0          # required by transformers Trainer
+datasets
+scikit-learn
+# NOTE: Install PyTorch separately BEFORE this file (CPU-only, saves ~2 GB):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# Do NOT uncomment the line below — it pulls the full GPU build (~2 GB larger)
+# torch==2.5.1+cpu
+
+# Document processing
+pypdf
+faiss-cpu
+
+# Auth + security
+python-jose[cryptography]   # JWT encode/decode
+passlib[bcrypt]            # password hashing
+bcrypt==3.2.0               # pinned for passlib compatibility
+
+# Config + utils
+pydantic-settings
+python-dotenv
+httpx
+python-qdrant-client==1.7.3 # vector search logic testing
+# Added for persistent API key encryption
+cryptography==42.0.8
+
+# Web search (optional — used by RAG graph web_search_node)
+tavily-python
